@@ -1,0 +1,3 @@
+<aura:event type="APPLICATION" description="Event template">
+    <aura:attribute name="salesEvidences" Type="Sales_Evidence__c[]"/>
+</aura:event>

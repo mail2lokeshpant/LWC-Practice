@@ -1,0 +1,8 @@
+<apex:page >
+{!$Profile.Name}
+<apex:form >   
+
+<apex:inputCheckbox selected="true" disabled="{!IF($Profile.Name=='System Administrator',true,false)}" />
+              </apex:form>
+    
+</apex:page>

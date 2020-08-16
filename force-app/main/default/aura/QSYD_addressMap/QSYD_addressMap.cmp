@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="String" />
+    
+    <div>
+        <div>
+            <c:QSYD_addressMapPiece recordId="{!v.recordId}" />
+        </div>
+        <div>
+            <c:QSYD_addressMapList recordId="{!v.recordId}" />
+        </div>
+    </div>
+</aura:component>

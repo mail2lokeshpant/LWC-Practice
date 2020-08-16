@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForRecordHome,force:lightningQuickActionWithoutHeader,force:hasRecordId">
+	<aura:attribute name="account" type="Object"/>
+    <aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="recordSaveError" type="String"/>
+
+    <force:recordData aura:id="accountRecordLoader"
+      recordId="{!v.recordId}"
+      layoutType="FULL"
+      targetRecord="{!v.account}"
+      targetFields="{!v.accountRecord}"
+      fields="Name,Industry,Description,Phone"
+      targetError="{!v.recordSaveError}"
+      />
+
+    <!-- Display a header with details about the record -->
+    <div class="slds-page-header" role="banner">
+        <ui:outputText value="{!v.accountRecord.Name}"/>
+        <ui:outputText value="{!v.accountRecord.Industry}"/>
+        <ui:outputTextArea value="{!v.accountRecord.Description}"/>
+        <ui:outputPhone value="{!v.accountRecord.Phone}"/>
+    </div>
+
+    <!-- Display Lightning Data Service errors, if any -->
+    <aura:if isTrue="{!not(empty(v.recordSaveError))}">
+        <div class="recordError">
+                {!v.recordSaveError}
+        </div>
+    </aura:if>
+</aura:component>

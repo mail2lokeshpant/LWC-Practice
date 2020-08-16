@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" 
+                access="global" 
+                controller="updateMultipleRecords">
+	<aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:attribute name="lstAccount" type="Account[]"/>
+     <aura:iteration items="{!v.lstAccount}" var="objAccount">
+         <c:SingleRecord objAccount1="{!objAccount}" />
+    </aura:iteration>
+    
+    <lightning:button variant="base" label="Save" title="Save" onclick="{! c.handleClick }"/>
+</aura:component>

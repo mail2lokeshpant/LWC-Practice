@@ -1,0 +1,7 @@
+<aura:component>
+    <aura:attribute name="SalesEvidence" type="Sales_Evidence__c"/>
+    
+    <aura:registerEvent name="propertySelected" type="c:QSYD_PropertySelected"/>
+    
+    <li><a onclick="{!c.propertySelected}">{!v.SalesEvidence.Address__c}</a></li>
+</aura:component>

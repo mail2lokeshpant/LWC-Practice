@@ -1,0 +1,14 @@
+<aura:component controller="QSYD_addressMapController">
+    <aura:attribute name="salesEvidences" type="Sales_Evidence__c[]"/>
+    <aura:attribute name="recordId" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:registerEvent name="locationsLoaded" type="c:QSYD_locationsLoaded"/>
+    
+    <ul>
+    <aura:iteration items="{!v.salesEvidences}" var="se">
+        <c:QSYD_addressMapListItem SalesEvidence="{!se}"/>
+    </aura:iteration>
+    </ul>
+</aura:component>

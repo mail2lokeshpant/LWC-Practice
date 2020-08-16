@@ -1,0 +1,7 @@
+<aura:component >
+    <aura:attribute name="name" 
+		   				type="String" 
+	                    default="Test"/>
+	<ui:outputText value="{!format($Label.c.TestLabel, v.name)}"/>
+
+</aura:component>

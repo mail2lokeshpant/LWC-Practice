@@ -1,0 +1,28 @@
+<aura:component >
+	<aura:attribute name = "objAccount1" 
+                    type = "Account" 
+                    default = "{'sobjectType':'Account',
+                                'Number_of_Contacts__c' : '',
+                                 'NumberofLocations__c':'',
+                                  'Name':''}"/>
+       <tr class="slds-hint-parent">
+            <td class="" data-label="Name" >
+                <lightning:input type="Text" 
+                                   name="Name" 
+                                   label="Enter a Name" 
+                                   value="{!v.objAccount1.Name}"/>
+           </td>
+          <td data-label="Number of Contacts" style="padding-left:0;">
+                 <lightning:input type="Text" 
+                                  name="Name" 
+                                  label="Enter a Name" 
+                                  value="{!v.objAccount1.Number_of_Contacts__c}"/>
+           </td>
+           <td data-label="Number of Locations" style="padding-left:0;">
+                 <lightning:input type="Text" 
+                                  name="Name" 
+                                  label="Enter a Name" 
+                                  value="{!v.objAccount1.NumberofLocations__c }"/>
+           </td> 
+       </tr>
+</aura:component >

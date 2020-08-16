@@ -1,0 +1,56 @@
+<aura:component controller="DocumentComponentController" access="GLOBAL" 
+                implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="lstOfUnit" type="string[]" />
+    <aura:attribute name="SelectedUnit" type="string" />
+    <aura:attribute name="ValidTo" type="string" />
+    <aura:attribute name="pdfContainer" type="Aura.Component[]" />
+    <aura:attribute name="CurrentConsStage" type="string" />
+    <aura:attribute name="lstPDF" type="string[]" />
+    <aura:attribute name="imageIndex" type="Integer" default="0" />
+    <aura:attribute name="appId" type="String" default="" />
+    <aura:attribute name="attName" type="String" default="" />
+    <aura:attribute name="pdfViewerLabel" type="String" default="Pdf View"/>
+    <aura:attribute name="showWaitingIcon" type="Boolean" default="false"/>
+    <!--<ltng:require styles="{!$Resource.SLDS103 + '/assets/styles/salesforce-lightning-design-system.css'}"/>--> 
+    
+	<style>
+        .label{
+        color: #0070d2 !important;
+        font-size: large;
+        }
+    </style>
+    
+    
+    <lightning:spinner aura:id="mySpinner" class="slds-hide" alternativeText="Please wait!" variant="brand"/>
+    <div  aura:id="PoPShow" class="hidePopup">
+        <div role="dialog" tabindex="-1" aria-labelledby="header43" class="slds-modal slds-modal--large slds-fade-in-open hidePopup">
+            <div class="slds-modal__container" >
+                <div style="height:0%"  class="slds-modal__header">
+                    <button class="slds-button slds-modal__close slds-button--icon-inverse" title="Close" onclick="{!c.hidePopUp}">
+                    X
+                    </button>
+                    <aura:if isTrue="{!v.imageIndex > 0}">
+                        <ui:button label="Prev" class="slds-button slds-button#brand" press="{!c.changeImgBack}" />
+                    </aura:if>
+                     {!v.imageIndex+1} out of {!v.lstPDF.length}
+                    <aura:if isTrue="{!v.lstPDF.length > (v.imageIndex+1)}">
+                        <ui:button label="Next" class="slds-button slds-button#brand" press="{!c.changeImgForwrd}" />
+                    </aura:if>
+                </div>
+                <div class="slds-modal__content slds-p-around--medium" style="height:650px">
+                    {!v.pdfContainer}
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <a href="javascript:void(0)" onclick="{!c.viewDemandLetter}">{!v.pdfViewerLabel}</a>
+    
+    <div class="flexiLoader" style="{!if(v.showWaitingIcon,'display:block;','display:none;')}">
+        <img  src="{!$Resource.FlxResourceZip + '/assets/images/loading_icon.gif'}"/>
+        
+    </div>
+    
+</aura:component>

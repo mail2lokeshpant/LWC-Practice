@@ -1,0 +1,6 @@
+<apex:page >
+  <video width="75%" controls="controls">
+      <source src="{!URLFOR($Resource.Video)}" type="video/mp4" />        
+      Your browser does not support the video tag.
+</video>
+</apex:page>

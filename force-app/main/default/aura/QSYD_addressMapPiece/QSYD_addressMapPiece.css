@@ -1,0 +1,21 @@
+.THIS {
+   width: 100%;
+   height: 100%;
+}
+
+.THIS .mapMarker .flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.THIS .mapMarker .flex p {
+    flex: 0 1 50%;
+    margin: 0;
+}
+
+.THIS .mapMarker .leaflet-popup-content h1 {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0;
+    margin: auto;
+}

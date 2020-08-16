@@ -1,0 +1,19 @@
+<aura:component controller="QSYD_addressMapController" >
+    <aura:attribute name="map" type="Object"/>
+    <aura:attribute name="recordId" type="String" />
+    
+    <aura:handler event="c:QSYD_locationsLoaded" action="{!c.locationsLoaded}"/>
+    <aura:handler event="c:QSYD_PropertySelected" action="{!c.propertySelected}"/>
+    
+    <ltng:require styles="{!$Resource.leaflet + '/leaflet.css'}"
+                  scripts="{!join(',',
+                           $Resource.leaflet + '/leaflet.js',
+                           $Resource.jQuery321)}"
+                  afterScriptsLoaded="{!c.jsLoaded}" />
+    
+    <!--<ltng:require styles="/resource/leaflet/leaflet.css"
+        scripts="/resource/leaflet/leaflet.js, /resource/jQuery321"
+        afterScriptsLoaded="{!c.jsLoaded}" />-->
+    
+    <div id="map"></div>
+</aura:component>
