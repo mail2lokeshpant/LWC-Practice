@@ -3,14 +3,14 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/leaflet": [
-                "../staticresources/leaflet/leaflet.js"
+            "c/hellpWorld": [
+                "hellpWorld/hellpWorld.js"
             ],
             "c/myComponent": [
                 "myComponent/myComponent.js"
             ],
-            "c/hellpWorld": [
-                "hellpWorld/hellpWorld.js"
+            "c/leaflet": [
+                "../staticresources/leaflet/leaflet.js"
             ],
             "c/HellpWorld": [
                 "HellpWorld/HellpWorld.js"

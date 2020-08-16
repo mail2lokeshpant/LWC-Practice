@@ -1,8 +1,10 @@
 <template>
-    <lightning-card title="HelloWorld" icon-name="custom:custom14">
-      <div class="slds-m-around_medium">
-        <p>Hello, {greeting}!</p>
-        <lightning-input label="Name" value={greeting} onchange={changeHandler}></lightning-input>
-      </div>
-    </lightning-card>
-  </template>
+  <div>
+      <div>Name: {name}</div>
+      <div>Description: {description}</div>
+      <div>Category: {category}</div>
+      <div>Material: {material}</div>
+      <div>Price: {price}</div>
+      <div><img src={pictureUrl}/></div>
+  </div>
+</template>
