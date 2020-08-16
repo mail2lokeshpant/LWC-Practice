@@ -14,6 +14,24 @@
             ],
             "c/HellpWorld": [
                 "HellpWorld/HellpWorld.js"
+            ],
+            "c/bikeCard": [
+                "bikeCard/bikeCard.js"
+            ],
+            "c/selector": [
+                "selector/selector.js"
+            ],
+            "c/tile": [
+                "tile/tile.js"
+            ],
+            "c/detail": [
+                "detail/detail.js"
+            ],
+            "c/list": [
+                "list/list.js"
+            ],
+            "c/data": [
+                "data/data.js"
             ]
         }
     },
