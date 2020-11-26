@@ -13,7 +13,7 @@
       />
 
     <!-- Display a header with details about the record -->
-    <div class="slds-page-header" role="banner">
+    <div class="slds-page-header test" role="banner">
         <ui:outputText value="{!v.accountRecord.Name}"/>
         <ui:outputText value="{!v.accountRecord.Industry}"/>
         <ui:outputTextArea value="{!v.accountRecord.Description}"/>
