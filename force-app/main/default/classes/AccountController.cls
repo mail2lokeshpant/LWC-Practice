@@ -34,4 +34,12 @@ public class AccountController{
         //return list of accounts
         return accList;
     }
+    @AuraEnabled
+    public static List <Account> fetchLead() {
+        //Qyery 10 accounts
+        //This is for CICD
+        List<Case> accList = [SELECT Id from Lead LIMIT 10];
+        //return list of accounts
+        return accList;
+    }
 }
