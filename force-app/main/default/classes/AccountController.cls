@@ -26,4 +26,12 @@ public class AccountController{
         //return list of accounts
         return accList;
     }
+    @AuraEnabled
+    public static List <Account> fetchCase() {
+        //Qyery 10 accounts
+        //This is for CICD
+        List<Case> accList = [SELECT Id from Case LIMIT 10];
+        //return list of accounts
+        return accList;
+    }
 }
