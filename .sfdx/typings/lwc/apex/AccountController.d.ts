@@ -7,6 +7,6 @@ declare module "@salesforce/apex/AccountController.fetchContacts" {
 declare module "@salesforce/apex/AccountController.fetchOpportunity" {
   export default function fetchOpportunity(): Promise<any>;
 }
-declare module "@salesforce/apex/AccountController.fetchLead" {
-  export default function fetchLead(): Promise<any>;
+declare module "@salesforce/apex/AccountController.fetchCase" {
+  export default function fetchCase(): Promise<any>;
 }
